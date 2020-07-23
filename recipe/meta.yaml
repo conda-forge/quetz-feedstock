@@ -1,5 +1,5 @@
 {% set name = "quetz" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/TheSnakePit/quetz/archive/v{{ version }}.tar.gz
-  sha256: b0dd139a7feab2170786b856c7a2fe30a76e7937d3c96396f724b2888fb54ab1
+  sha256: f97bca2c2f2ae724f22506a713ea6530c96cf219f88d94cab7d0e0184ad43fde
 
 build:
   noarch: python
@@ -30,6 +30,8 @@ requirements:
     - uvicorn >=0,<1
     - zstandard >=0,<1
     - conda-build >=3,<4
+    - appdirs >=1,<2
+    - toml >=0,<1
 
 test:
   imports:
