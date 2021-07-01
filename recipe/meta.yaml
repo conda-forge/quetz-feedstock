@@ -22,7 +22,7 @@ requirements:
   run:
     - python>=3.7
     - pip
-    - fastapi >=0.65.2,<0.7
+    - fastapi >=0.65,<0.7
     - typer
     - authlib
     - psycopg2
