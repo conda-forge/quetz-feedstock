@@ -58,6 +58,8 @@ requirements:
 test:
   imports:
     - quetz
+  commands:
+    - quetz --help
 
 about:
   home: https://github.com/mamba-org/quetz
