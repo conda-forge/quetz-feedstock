@@ -1,5 +1,5 @@
 {% set name = "quetz" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mamba-org/quetz/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 1b10eac5b3590e7c065df24770ed3c20eb9f8e5aa00b3b5b4185dfa44d089cff
+  sha256: b53f2dbbb667930d07347c39d52f07b82d5370cdbc207c4ba130ce263d406c33
 
 build:
   noarch: python
