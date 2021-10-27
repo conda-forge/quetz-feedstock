@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - quetz = quetz.cli:app
@@ -28,7 +28,7 @@ requirements:
     - typer
     - authlib
     - psycopg2
-    - httpx 0.16.0
+    - httpx >=0.18.2
     - sqlalchemy <1.4.0
     - sqlalchemy-utils
     - sqlite
@@ -72,3 +72,4 @@ extra:
   recipe-maintainers:
     - mariobuikhuizen
     - wolfv
+    - janjagusch
