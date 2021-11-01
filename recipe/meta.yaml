@@ -28,7 +28,7 @@ requirements:
     - typer
     - authlib
     - psycopg2
-    - httpx >=0.18.2
+    - httpx >=0.20.0
     - sqlalchemy <1.4.0
     - sqlalchemy-utils
     - sqlite
