@@ -54,6 +54,7 @@ requirements:
     - pamela
     - typing_extensions
     - adlfs
+    - importlib-metadata >=4.8,<5
 
 test:
   imports:
