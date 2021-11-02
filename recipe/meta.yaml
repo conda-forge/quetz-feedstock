@@ -38,7 +38,6 @@ requirements:
     - appdirs
     - toml
     - fsspec
-    - s3fs
     - requests
     - h2 >3,<4.0.0
     - pluggy
@@ -53,8 +52,10 @@ requirements:
     - prometheus_client
     - pamela
     - typing_extensions
-    - adlfs
     - importlib-metadata >=4.8,<5
+  run_constrained:
+    - s3fs >=2021.10.1
+    - adlfs >=2021.10.0
 
 test:
   imports:
