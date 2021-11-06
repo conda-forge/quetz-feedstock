@@ -1,5 +1,5 @@
 {% set name = "quetz" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/mamba-org/quetz/archive/refs/tags/{{ version }}.tar.gz
-  sha256: b53f2dbbb667930d07347c39d52f07b82d5370cdbc207c4ba130ce263d406c33
+  sha256: 82f35b15e445e9c68abacc14587a27e5e9074749d53e1dff09ef172e9f66f32e
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - quetz = quetz.cli:app
 
@@ -27,8 +27,7 @@ requirements:
     - fastapi >=0.65.0,<1.0
     - typer
     - authlib
-    - psycopg2
-    - httpx >=0.18.2
+    - httpx >=0.20.0
     - sqlalchemy <1.4.0
     - sqlalchemy-utils
     - sqlite
@@ -38,7 +37,6 @@ requirements:
     - appdirs
     - toml
     - fsspec
-    - s3fs
     - requests
     - h2 >3,<4.0.0
     - pluggy
@@ -53,7 +51,11 @@ requirements:
     - prometheus_client
     - pamela
     - typing_extensions
-    - adlfs
+    - importlib-metadata >=4.8,<5
+  run_constrained:
+    - s3fs >=2021.10.1
+    - adlfs >=2021.10.0
+    - gcsfs >=2021.10.1
 
 test:
   imports:
@@ -66,7 +68,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'The Mamba package server'
+  summary: The Mamba package server
 
 extra:
   recipe-maintainers:
