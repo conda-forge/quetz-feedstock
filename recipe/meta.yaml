@@ -1,13 +1,13 @@
 {% set name = "quetz" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/mamba-org/quetz/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 82f35b15e445e9c68abacc14587a27e5e9074749d53e1dff09ef172e9f66f32e
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-server/{{ name }}-server-{{ version }}.tar.gz
+  sha256: 9097bfed3156a33e1da092db4e1ebb828107d077f80b4706ca2293009a1b6e9e
 
 build:
   noarch: python
@@ -23,35 +23,33 @@ requirements:
     - setuptools
   run:
     - python >=3.7
-    - pip
+    - alembic 1.*
+    - aiofiles
+    - appdirs
     - fastapi >=0.65.0,<1.0
-    - typer
-    - authlib
-    - httpx >=0.20.0
+    - fsspec
+    - h2 >3,<4.0.0
+    - importlib-metadata >=4.8,<5
+    - itsdangerous
+    - jinja2
+    - pluggy
+    - prometheus_client
+    - python-multipart
+    - pyyaml
+    - requests
     - sqlalchemy <1.4.0
     - sqlalchemy-utils
-    - sqlite
-    - python-multipart
-    - uvicorn
-    - zstandard
-    - appdirs
-    - toml
-    - fsspec
-    - requests
-    - h2 >3,<4.0.0
-    - pluggy
-    - jinja2
-    - itsdangerous
-    - alembic 1.*
     - tenacity
-    - xattr
-    - aiofiles
-    - pyyaml
-    - ujson
-    - prometheus_client
-    - pamela
+    - toml
+    - typer
     - typing_extensions
-    - importlib-metadata >=4.8,<5
+    - ujson
+    - uvicorn
+    - xattr
+    - authlib
+    - zstandard
+    - pamela
+    - sqlite
   run_constrained:
     - s3fs >=2021.10.1
     - adlfs >=2021.10.0
