@@ -29,6 +29,7 @@ requirements:
     - fastapi >=0.65.0,<1.0
     - fsspec
     - h2 >3,<4.0.0
+    - httpx ~=0.20.0
     - importlib-metadata >=4.8,<5
     - itsdangerous
     - jinja2
