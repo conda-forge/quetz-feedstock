@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - quetz = quetz.cli:app
@@ -46,7 +46,7 @@ requirements:
     - ujson
     - uvicorn
     - xattr
-    - authlib
+    - authlib<1.0.0
     - zstandard
     - pamela
     - sqlite
