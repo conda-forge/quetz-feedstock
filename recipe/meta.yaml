@@ -28,7 +28,7 @@ requirements:
     - appdirs
     - fastapi
     - fsspec
-    - httpx=0.20.0
+    - httpx =0.20.0
     - h2
     - importlib_metadata
     - itsdangerous
@@ -47,7 +47,7 @@ requirements:
     - ujson
     - uvicorn
     - xattr
-    - authlib=0.15.5
+    - authlib =0.15.5
     - zstandard
     - pamela
     - sqlite
