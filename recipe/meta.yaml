@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - quetz = quetz.cli:app
@@ -23,13 +23,15 @@ requirements:
     - setuptools
   run:
     - python >=3.7
-    - alembic 1.*
+    - alembic
     - aiofiles
     - appdirs
-    - fastapi >=0.65.0,<1.0
+    - authlib <1.0.0
+    - fastapi
     - fsspec
-    - h2 >3,<4.0.0
-    - importlib-metadata >=4.8,<5
+    - h2
+    - httpx ~=0.20.0
+    - importlib-metadata
     - itsdangerous
     - jinja2
     - pluggy
@@ -46,10 +48,7 @@ requirements:
     - ujson
     - uvicorn
     - xattr
-    - authlib
     - zstandard
-    - pamela
-    - sqlite
   run_constrained:
     - s3fs >=2021.10.1
     - adlfs >=2021.10.0
