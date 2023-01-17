@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - quetz = quetz.cli:app
@@ -30,7 +30,7 @@ requirements:
     - fastapi
     - fsspec
     - h2
-    - httpx ~=0.20.0
+    - httpx >=0.22.0
     - importlib-metadata
     - itsdangerous
     - jinja2
