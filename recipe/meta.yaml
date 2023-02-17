@@ -1,5 +1,5 @@
 {% set name = "quetz" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-server/{{ name }}-server-{{ version }}.tar.gz
-  sha256: a36de4385c39f19164efd6175712620b59487a10fdbb03c3168fa5aa1470a43a
+  sha256: 44364450cbce6adba12f1aff27589b27ee5096493f466194289f41bd0a144167
 
 build:
   noarch: python
@@ -47,7 +47,6 @@ requirements:
     - typing_extensions
     - ujson
     - uvicorn
-    - xattr
     - zstandard
   run_constrained:
     - s3fs >=2021.10.1
