@@ -1,5 +1,5 @@
 {% set name = "quetz" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-server/{{ name }}-server-{{ version }}.tar.gz
-  sha256: 65ddb24451e6b0dc1c91544ce4b93fa800bc1ac4c951cdd6a2bcd13acd5e7723
+  sha256: a36de4385c39f19164efd6175712620b59487a10fdbb03c3168fa5aa1470a43a
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - quetz = quetz.cli:app
