@@ -47,7 +47,6 @@ requirements:
     - typing_extensions
     - ujson
     - uvicorn
-    - xattr
     - zstandard
   run_constrained:
     - s3fs >=2021.10.1
