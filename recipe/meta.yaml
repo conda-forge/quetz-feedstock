@@ -48,6 +48,7 @@ requirements:
     - ujson
     - uvicorn
     - zstandard
+    - aioshutil
   run_constrained:
     - s3fs >=2021.10.1
     - adlfs >=2021.10.0
