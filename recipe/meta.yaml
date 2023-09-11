@@ -1,5 +1,5 @@
 {% set name = "quetz" %}
-{% set version = "0.9.2" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-server/{{ name }}-server-{{ version }}.tar.gz
-  sha256: f2ea13105dd248f0c23decc777ae1b8a58b260eec7dc40c099718210001ded1b
+  sha256: 51cfb033a3f9ce9973009bd0a30e2d2133c4b33a3f7131a58bd0e347847f9ad6
 
 build:
   noarch: python
@@ -37,6 +37,7 @@ requirements:
     - pluggy
     - prometheus_client
     - python-multipart
+    - pydantic >=2.0.0
     - pyyaml
     - requests
     - sqlalchemy
