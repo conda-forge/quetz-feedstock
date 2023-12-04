@@ -1,5 +1,5 @@
 {% set name = "quetz" %}
-{% set version = "0.10.3" %}
+{% set version = "0.10.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-server/{{ name }}-server-{{ version }}.tar.gz
-  sha256: 304b345548e51f42e8a31e81cd85d016579820e7d7fd8b44a77ffa2f962b1989
+  sha256: fde82b72b2e3fb22bfd0f6fec99ef41d845a76341801955e1d280be204049b90
 
 build:
   noarch: python
