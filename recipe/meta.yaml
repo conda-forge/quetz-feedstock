@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-server/{{ name }}-server-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}-server/{{ name }}-server-{{ version }}.tar.gz
   sha256: fde82b72b2e3fb22bfd0f6fec99ef41d845a76341801955e1d280be204049b90
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - quetz = quetz.cli:app
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - alembic
     - aiofiles
     - appdirs
@@ -56,6 +56,8 @@ requirements:
     - gcsfs >=2022.3.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - quetz
   commands:
