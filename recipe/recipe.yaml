@@ -1,28 +1,32 @@
-{% set name = "quetz" %}
-{% set version = "0.10.4" %}
+schema_version: 1
+
+context:
+  name: quetz
+  version: 0.10.4
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}-server/{{ name }}-server-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}-server/${{ name }}-server-${{ version }}.tar.gz
   sha256: fde82b72b2e3fb22bfd0f6fec99ef41d845a76341801955e1d280be204049b90
 
 build:
+  number: 2
   noarch: python
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
-  entry_points:
-    - quetz = quetz.cli:app
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - quetz = quetz.cli:app
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - setuptools
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - alembic
     - aiofiles
     - appdirs
@@ -50,25 +54,27 @@ requirements:
     - uvicorn
     - zstandard
     - aioshutil
-  run_constrained:
+  run_constraints:
     - s3fs >=2021.10.1
     - adlfs >=2021.10.0
     - gcsfs >=2022.3.0
 
-test:
-  requires:
-    - python {{ python_min }}
-  imports:
-    - quetz
-  commands:
-    - quetz --help
+tests:
+  - python:
+      imports:
+        - quetz
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - quetz --help
 
 about:
-  home: https://github.com/mamba-org/quetz
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE
   summary: The Mamba package server
+  homepage: https://github.com/mamba-org/quetz
 
 extra:
   recipe-maintainers:
